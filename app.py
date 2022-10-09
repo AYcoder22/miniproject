@@ -7,8 +7,7 @@ st.title('URBANIZATION WEBSITE')
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 
-st.subheader('Raw data')
-st.write(data)
+
 
 @st.cache
 def load_data(nrows): 
@@ -24,6 +23,9 @@ data_load_state = st.text('Loading data...')
 data = load_data(10000)
 # Notify the reader that the data was successfully loaded.
 data_load_state.text("Done! (using st.cache)")
+
+st.subheader('Raw data')
+st.write(data)
 
 year = st.slider('choose year?', 1800, 2022, 1999)
 st.write("This Map Represents year:  ", year)
