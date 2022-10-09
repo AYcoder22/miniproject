@@ -77,5 +77,3 @@ st.pydeck_chart(pdk.Deck(
 #slider
 hour_to_filter = st.slider('hour', 0, 23, 17)  # min: 0h, max: 23h, default: 17h
 
-year = st.slider('choose year?', 1800, 2022, 1999)
-st.write("This Map Represents year:  ", year)
