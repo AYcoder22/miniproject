@@ -2,12 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-[theme]
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
+
 
 st.title('Uber pickups in NYC')
 
@@ -86,3 +81,11 @@ except URLError as e:
     """
         % e.reason
     )
+
+
+[theme]
+primaryColor="#F63366"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F0F2F6"
+textColor="#262730"
+font="sans serif"
