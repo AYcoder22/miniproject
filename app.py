@@ -10,6 +10,8 @@ DATA_URL = ('https://s3-us-west-2.amazonaws.com/streamlit-demo-data/uber-raw-dat
 
 
 
+
+
 @st.cache
 def load_data(nrows): 
     data = pd.read_csv(DATA_URL, nrows=nrows)
@@ -31,6 +33,9 @@ st.write(data)
 hist_values = np.histogram(
     data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
 st.bar_chart(hist_values)
+
+st.subheader('Map of all pickups')
+st.map(data)
 
 year = st.slider('choose year?', 1800, 2022, 1999)
 st.write("This Map Represents year:  ", year)
