@@ -1,7 +1,14 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-"""
+
+[theme]
+primaryColor="#F63366"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F0F2F6"
+textColor="#262730"
+font="sans serif"
+
 st.title('Uber pickups in NYC')
 
 DATE_COLUMN = 'date/time'
@@ -34,7 +41,8 @@ filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
 st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 st.map(filtered_data)
-"""
+
+
 
 st.title('Map data')
 st.title('part 2')
