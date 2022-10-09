@@ -8,6 +8,9 @@ DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
          'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 
+@st.cache
+def load_data(nrows):
+
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     lowercase = lambda x: str(x).lower()
@@ -20,7 +23,7 @@ data_load_state = st.text('Loading data...')
 # Load 10,000 rows of data into the dataframe.
 data = load_data(10000)
 # Notify the reader that the data was successfully loaded.
-data_load_state.text('Loading data...done!')
+data_load_state.text("Done! (using st.cache)")
 
 year = st.slider('choose year?', 1800, 2022, 1999)
 st.write("This Map Represents year:  ", year)
