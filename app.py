@@ -8,8 +8,7 @@ page_names_to_funcs[selected_page]()
 st.title('URBANIZATION MEASUREMENT')
 
 DATE_COLUMN = 'date/time'
-DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
-            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+DATA_URL = ('https://s3-us-west-2.amazonaws.com/streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 #upload
 @st.cache
 def load_data(nrows):
@@ -48,7 +47,7 @@ def get_UN_data():
 df = get_UN_data()
 countries = st.multiselect("Choose countries", list(df.index), ["China", "United States of America"])
 if not countries:
-                        st.error("Please select at least one country.")
+            st.error("Please select at least one country.")
 else:
             data = df.loc[countries]
             data /= 1000000.0
