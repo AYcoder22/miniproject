@@ -1,22 +1,18 @@
 import streamlit as st
 
-def main_page():
-    st.markdown("# Main page 🎈")
-    st.sidebar.markdown("# Main page 🎈")
+st.set_page_config(
+    page_title="Multipage App",
+    page_icon="👋",
+)
 
-def page2():
-    st.markdown("# Page 2 ❄️")
-    st.sidebar.markdown("# Page 2 ❄️")
+st.title("Main Page")
+st.sidebar.success("Select a page above.")
 
-def page3():
-    st.markdown("# Page 3 🎉")
-    st.sidebar.markdown("# Page 3 🎉")
+if "my_input" not in st.session_state:
+    st.session_state["my_input"] = ""
 
-page_names_to_funcs = {
-    "Main Page": main_page,
-    "Page 2": page2,
-    "Page 3": page3,
-}
-
-selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
-page_names_to_funcs[selected_page]()
+my_input = st.text_input("Input a text here", st.session_state["my_input"])
+submit = st.button("Submit")
+if submit:
+    st.session_state["my_input"] = my_input
+    st.write("You have entered: ", my_input)
