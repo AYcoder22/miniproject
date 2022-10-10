@@ -25,7 +25,7 @@ if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 
-st.subheader('Number of pickups by hour')
+st.subheader('Bar graph')
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
 st.bar_chart(hist_values)
 
@@ -33,13 +33,13 @@ st.bar_chart(hist_values)
 year = st.slider('year', 0, 23, 17)
 filtered_data = data[data[DATE_COLUMN].dt.hour == year]
 
-st.subheader('Map of all pickups at %s:00' % year)
+st.subheader('Map of all data at %s:00' % year)
 st.map(filtered_data)
 
 
 
 st.title('Map data')
-st.title('part 2')
+st.title('try part 2')
 @st.cache
 def get_UN_data():
     AWS_BUCKET_URL = "http://streamlit-demo-data.s3-us-west-2.amazonaws.com"
