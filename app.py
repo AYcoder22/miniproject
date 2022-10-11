@@ -63,9 +63,9 @@ with st.sidebar:
     """
     )
 
-"""
+    
+    
 #1
-import streamlit as st
 
 st.set_page_config(
     page_title="Multipage App",
@@ -148,5 +148,3 @@ else:
             st.altair_chart(chart, use_container_width=True)
 
             
-
-"""
