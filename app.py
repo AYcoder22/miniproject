@@ -2,7 +2,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from streamlit_disqus import st_disqus
 
+st_disqus("streamlit-disqus-demo")
 
 st.title('URBANIZATION MEASUREMENT')
 
